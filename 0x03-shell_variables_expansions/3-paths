@@ -1,2 +1,2 @@
 #!/bin/bash
-read -ra directories <<< "$PATH"
+echo $((`echo $PATH | grep -0 ":/" | wc -1` +1))
