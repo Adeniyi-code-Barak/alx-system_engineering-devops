@@ -1,0 +1,2 @@
+#!/bin/bash
+encode_rot13()
