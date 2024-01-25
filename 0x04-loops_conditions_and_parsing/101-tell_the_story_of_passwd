@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Bash script that displays the content of the file /etc/passwd
+
+filename="/etc/passwd"
+
+while IFS=: read -r username password uid gid user_id_info home_dir command;
+do
+
+	echo "The user ""$username"" is part of the ""$gid"" gang, lives in ""$home_dir"" and rides ""$command"". ""$uid""'s place is protected by the passcode ""$password"", more info about the user here: ""$user_id_info"""
+
+done < "$filename"
