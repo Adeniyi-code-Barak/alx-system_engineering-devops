@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Process and PID file
+
+var=/var/run/myscript.pid
+echo $$ > "$var"
+handle_sigterm() {
+	echo "I hate the kill command";
+	rm -r "$var";
+	exit 0
+}
+handle_sigint() {
+	echo "Y U no love me?!";
+	exit 0
+}
+handle_sigquit() {
+	echo "Y U no love me?!";
+	exit 0
+}
+trap "handle_sigterm" SIGTERM
+trap "handle_sigint" SIGINT
+trap "handle_sigquit" SIGQUIT
+i=1
+while ((i))
+do
+	echo "To infinity and beyond"
+	((i++))
+done
