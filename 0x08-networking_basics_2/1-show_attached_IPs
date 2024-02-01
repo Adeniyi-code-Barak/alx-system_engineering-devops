@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Show attached IPs
+var=$(ifconfig | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1)
+echo "$var"
